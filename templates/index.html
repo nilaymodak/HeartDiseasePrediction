@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Heart Disease Prediction</h2>
+            <h3>Age</h3>
+            <input id="Age" name="Age" class="Age" type="number" required><br><br>
+
+            <h3>What is the gender?</h3>
+            <select id="Gender" class="Gender" name="Gender" required>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select><br><br>
+
+            <h3>What is the type of angina(chest pain caused by reduced blood flow to the heart)?</h3>
+            <select id="ChestPain" class="ChestPain" name="ChestPain" required>
+              <option value="0">Typical angina</option>
+              <option value="1">Atypical angina</option>
+              <option value="2">Non-anginal pain</option>
+              <option value="3">Asymptomatic</option>
+            </select><br><br>
+
+            <h3>What is the resting blood pressure?</h3>
+            <input id="RestingBP" name="RestingBP" class="RestingBP" type="number" required><br><br>
+
+            <h3>What is the cholesterol level?</h3>
+            <input id="Chol" name="Chol" class="Chol" type="number" required><br><br>
+
+            <h3>Is the fasting blood sugar higher than 120 mg/dl?</h3>
+            <select id="FstBldSug" class="FstBldSug" name="FstBldSug" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select><br><br>
+
+            <h3>Select the resting ECG results:</h3>
+            <select id="RestingECG" class="RestingECG" name="RestingECG" required>
+              <option value="0">Normal</option>
+              <option value="1">Having ST-T wave abnormality</option>
+              <option value="2">Showing ventricular hypertrophy</option>
+            </select><br><br>
+
+            <h3>What is the maximum heart rate achieved?</h3>
+            <input id="MaxHR" name="MaxHR" class="MaxHR" type="number" required><br><br>
+
+            <h3>Is there exercised induced angina?</h3>
+            <select id="ExerAngina" class="ExerAngina" name="ExerAngina" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select><br><br>
+
+            <h3>ST Depression after exercise?</h3>
+            <input id="STDep" name="STDep" class="STDep" type="number" step="0.1" required><br><br>
+
+            <h3>Describe the slope of the peak exercise ST segment:</h3>
+            <select id="STSlope" class="STSlope" name="STSlope" required>
+              <option value="0">Upsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Downsloping</option>
+            </select><br><br>
+
+            <h3>How many major vessels were colored by flouroscopy?</h3>
+            <select id="MjrFlo" class="MjrFlo" name="MjrFlo" required>
+              <option value="0">No vessels</option>
+              <option value="1">1 Vessel</option>
+              <option value="2">2 vessels</option>
+              <option value="3">3 vessels</option>
+            </select><br><br>
+
+            <h3>Select the defect type:</h3>
+            <select id="Defect" class="Defect" name="Defect" required>
+              <option value="0">No Defect/Normal</option>
+              <option value="1">Fixed defect</option>
+              <option value="2">Reversable defect</option>
+            </select><br><br>
+            <br><br><button id="sub" type="submit">Predict Heart Disease</button>
+            <br>
+        </form>
+        <br><br>
+	<h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: gray;
+            text-align: center;
+            padding: 0px;
+        }
+        #sub {
+            width: 150px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+            background-color: coral;
+        }
+        #sub:hover {
+            background-color: darkcyan;
+        }
+    </style>
+</body>
+
+</html>
